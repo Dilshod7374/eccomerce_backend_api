@@ -21,17 +21,11 @@ class User extends Authenticatable
         'phone',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password'          => 'hashed',
@@ -42,5 +36,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function favourites(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class);
+    }
 
 }
