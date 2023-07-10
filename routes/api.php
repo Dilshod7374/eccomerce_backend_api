@@ -4,8 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\FavouriteController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +27,7 @@ Route::controller(AuthController::class)->group(function () {
 Route::apiResources([
     "categories.products" => CategoryProductController::class,
     "categories"          => CategoryController::class,
-    "favourites"          => FavouriteController::class,
     "products"            => ProductController::class,
+    "favourites"          => FavouriteController::class,
+    "orders"              => OrderController::class,
 ]);

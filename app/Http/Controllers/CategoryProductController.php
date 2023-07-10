@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Pagination\CursorPaginator;
 
 class CategoryProductController extends Controller
 {
-    public function index(Category $category) {
+    public function index(Category $category): CursorPaginator
+    {
         return $category->products()->cursorPaginate(25);
     }
 }
