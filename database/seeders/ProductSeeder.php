@@ -27,7 +27,8 @@ class ProductSeeder extends Seeder
                         'value_id'     => rand(4, 5),
                     ],
                 ]),
-            ]);            $product->stocks()->create([
+            ]);
+            $product->stocks()->create([
                 'quantity'   => rand(1, 10),
                 'attributes' => json_encode([
                     [

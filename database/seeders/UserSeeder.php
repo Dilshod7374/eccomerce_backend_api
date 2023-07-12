@@ -12,12 +12,12 @@ class UserSeeder extends Seeder
 
     public function run(): void
     {
-        $admin =  User::create([
-        'first_name' => 'Admin',
-        'last_name' => 'Admin',
-        'email' => 'admin@ecom.uz',
-        'phone' => '+999999999',
-        'password' => Hash::make('secret123') ,
+        $admin = User::create([
+            'first_name' => 'Admin',
+            'last_name'  => 'Admin',
+            'email'      => 'admin@ecom.uz',
+            'phone'      => '+999999999',
+            'password'   => Hash::make('secret123'),
         ]);
 
         $admin->roles()->attach(1);
