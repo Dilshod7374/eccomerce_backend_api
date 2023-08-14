@@ -15,12 +15,7 @@ class OrderController extends Controller
 
     public function index()
     {
-        //
-    }
-
-    public function create()
-    {
-        //
+        return auth()->user()->orders;
     }
 
     public function store(StoreOrderRequest $request)
